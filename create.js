@@ -17,15 +17,19 @@ function insertNewPhotoCard(PhotoUrl, caption){
     photoCardSection.classList.add('photo-card')
     photoCardSection.classList.add('second-photo-card')
     photoCardSection.classList.add('third-photo-card')
-
     photoCardSection.classList.remove('second-photo-card')
 
     var imgContainerDiv = document.createElement('div')
     imgContainerDiv.classList.add('img-container')
     photoCardSection.appendChild(imgContainerDiv)
 
-    var personPhotoImg = document.createElement('div')
-    personPhotoImg.classList.add('img-container')
+    var captionDiv = document.createElement('div')
+    captionDiv.classList.add('caption')
+    captionDiv.textContent = caption
+    photoCardSection.appendChild(captionDiv)
+
+    // var personPhotoImg = document.createElement('div')
+    // personPhotoImg.classList.add('img-container')
     
 
     console.log("== photCardSelection: ", photoCardSection)
@@ -34,4 +38,7 @@ function insertNewPhotoCard(PhotoUrl, caption){
     photoCardContainer.appendChild(photoCardSection)
 }
 
-insertNewPhotoCard("https://placekitten.com/480/480/?image=6", "Luke as a kitty")
+insertNewPhotoCard("https://placekitten.com/480/480", "Luke as a kitty")
+
+var photoCard = document.getElementsByClassName('photo-card')
+photoCard[0].remove()
